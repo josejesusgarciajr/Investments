@@ -1,0 +1,33 @@
+﻿@model Investments.Models.Client;
+@{
+    ViewData["Title"] = "Sock Investments";
+}
+
+<div class="container center-text">
+
+    <h1 class="display-4">Stock Investments</h1>
+
+    <form asp-controller="Home" asp-action="CalculateInvestments">
+
+        <!-- Starting Balance Invested-->
+        <code>Starting Balance Invested:</code>
+        <input type="number" class="form-control" placeholder="7000"
+               asp-for="StockInvestment.MoneyInvested"/>
+
+        <!-- How Many Months -->
+        <code>Number of Months to Invest:</code>
+        <input type="number" class="form-control" placeholder="60"
+               asp-for="StockInvestment.NumMonths"/>
+
+        <!-- Monthly Contribution -->
+        <code>Monthly Contribution:</code>
+        <input type="number" class="form-control" placeholder="100"
+               asp-for="StockInvestment.MonthlyContribution"/>
+
+        <br /><br />
+        <!-- Run the Code -->
+        <input type="submit" value="See Returns" class="btn btn-primary"/>
+
+    </form>
+
+</div>

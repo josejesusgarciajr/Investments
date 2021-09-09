@@ -1,0 +1,77 @@
+﻿@model Investments.Models.Client;
+@{
+    ViewData["Title"] = "Returns";
+}
+
+<div class="container text-center">
+    <h1 class="display-4">
+        Calculated Returns
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+            <path d="M8 .95 14.61 4h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.379l.5 2A.5.5 0 0 1 15.5 17H.5a.5.5 0 0 1-.485-.621l.5-2A.5.5 0 0 1 1 14V7H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 4h.89L8 .95zM3.776 4h8.447L8 2.05 3.776 4zM2 7v7h1V7H2zm2 0v7h2.5V7H4zm3.5 0v7h1V7h-1zm2 0v7H12V7H9.5zM13 7v7h1V7h-1zm2-1V5H1v1h14zm-.39 9H1.39l-.25 1h13.72l-.25-1z" />
+        </svg>
+    </h1>
+
+    @{
+        var month = 1;
+        var date = new DateTime(2021, month, 28);
+    }
+
+    <!-- Table -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Months Profit</th>
+                <th scope="col">Money</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (MonthlyIRData data in Model.StockInvestment.MonthlyIRDatas)
+            {
+                @if (month == 13)
+                {
+                    month = 1;
+                }
+
+                date = new DateTime(2021, month, 28);
+                month++;
+
+                <tr>
+                    <!-- DATE -->
+                    <td>@date.ToString("F")</td>
+
+                    <!-- EACH MONTHS PROFITS -->
+                    <td>
+                        <code>
+                            @String.Format("{0:0,0.##}", data.MonthlyProfit)
+                        </code>
+                    </td>
+
+                    <!-- MONEY -->
+                    <td>
+                        <code>
+                            @String.Format("{0:0,0.##}", data.Money)
+                        </code>
+                    </td>
+
+             
+                </tr>         
+
+            }
+
+        </tbody>
+    </table>
+
+    <div>
+        <p class="lead">
+            Net Profit:
+            <code>
+                $@String.Format("{0:0,0.##}", @Model.StockInvestment.NetProfit)
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                    <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
+                </svg>
+            </code>
+        </p>
+    </div>
+</div>
