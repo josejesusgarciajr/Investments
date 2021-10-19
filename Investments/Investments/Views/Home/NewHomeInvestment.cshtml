@@ -16,7 +16,7 @@
 -->
 <div>
 
-    <form asp-controller="Home" asp-action="CalculateMortageMonthlyPayment">
+    <form asp-controller="Home" asp-action="CalculateHouseInfomation">
 
         <!-- Price of House -->
         <label class="lead">Price of House:
@@ -29,6 +29,16 @@
             <code>Don't include $ or ,</code> </label>
         <input class="form-control" placeholder="$30,000"
                type="number" asp-for="DownPayment" />
+
+        <!-- Duration of Loan -->
+        <label>Duration of Loan: (In Years)</label>
+        <input class="form-control" placeholder="30"
+               type="number" asp-for="DurationOfLoanInYears" />
+
+        <!-- Fixed Intrest Rate -->
+        <label>Fixed Intrest Rate:</label>
+        <input class="form-control" placeholder="5"
+               type="number" asp-for="FixedIntrestRate"/>
 
         <!-- Credit Score -->
         <label class="lead">Credit Score:</label>

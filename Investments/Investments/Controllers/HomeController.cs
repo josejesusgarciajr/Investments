@@ -33,6 +33,14 @@ namespace Investments.Controllers
             return View();
         }
 
+        public IActionResult CalculateHouseInfomation(HouseInvestment houseInvestment)
+        {
+            houseInvestment.Principle = houseInvestment.PriceOfHouse;
+            houseInvestment.CalculateMortgagePayment();
+
+            return View(houseInvestment);
+        }
+
         public IActionResult CalculateInvestments(Client client)
         {
             if (client.StockInvestment == null)

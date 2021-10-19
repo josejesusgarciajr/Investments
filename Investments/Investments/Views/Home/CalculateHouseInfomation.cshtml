@@ -1,0 +1,13 @@
+﻿@model Investments.Models.HouseInvestment;
+@{
+    ViewData["Title"] = "House Information";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Mortgage Monthly Payment</h1>
+    <h3 class="display-4">
+        <code> @String.Format("{0:0,0.##}", Model.MortgageMonthlyPayment) </code>
+    </h3>
+
+</div>
