@@ -28,8 +28,18 @@ namespace Investments.Controllers
             return View();
         }
 
+        public IActionResult NewHomeInvestment()
+        {
+            return View();
+        }
+
         public IActionResult CalculateInvestments(Client client)
         {
+            if (client.StockInvestment == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             client.StockInvestment.CalculateReturns();
 
             return View(client);

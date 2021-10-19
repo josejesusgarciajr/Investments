@@ -1,0 +1,45 @@
+﻿@model Investments.Models.HouseInvestment;
+@{
+    ViewData["Title"] = "New Home Investment";
+}
+
+
+
+<div class="text-center">
+
+    <h1 class="display-4">New Home Investment</h1>
+
+</div>
+
+<!--
+       Form for Home Investment
+-->
+<div>
+
+    <form asp-controller="Home" asp-action="CalculateMortageMonthlyPayment">
+
+        <!-- Price of House -->
+        <label class="lead">Price of House:
+            <code>Don't include $ or ,</code> </label>
+        <input class="form-control" placeholder="$500,000"
+               type="number" asp-for="PriceOfHouse" />
+
+        <!-- Down Payment -->
+        <label class="lead">Down Payment:
+            <code>Don't include $ or ,</code> </label>
+        <input class="form-control" placeholder="$30,000"
+               type="number" asp-for="DownPayment" />
+
+        <!-- Credit Score -->
+        <label class="lead">Credit Score:</label>
+        <input class="form-control" placeholder="720"
+               type="number" asp-for="CreditScore" />
+
+        <br />
+        <input class="btn btn-primary"
+               type="submit" 
+               value="Calculate Monthly Mortgage Payment" />
+
+    </form>
+
+</div>

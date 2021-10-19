@@ -9,6 +9,7 @@ namespace Investments.Models
 
         public double MoneyInvested { get; set; }
         public double MonthlyContribution { get; set; }
+        public double MoneyContributionToDate { get; set; }
 
         public int NumMonths { get; set; }
         public double NetProfit { get; set; }
@@ -27,12 +28,14 @@ namespace Investments.Models
             MonthlyIRDatas = new List<MonthlyIRData>();
 
             double moneyMoved = MoneyInvested;
+            MoneyContributionToDate = MoneyInvested;
 
             for (int month = 0; month < NumMonths; month++)
             {
                 double x = MonthlyReturn(moneyMoved);
+                MoneyContributionToDate += MonthlyContribution;
 
-                MonthlyIRDatas.Add(new MonthlyIRData(x, x - moneyMoved - MonthlyContribution));
+                MonthlyIRDatas.Add(new MonthlyIRData(MoneyContributionToDate, x - moneyMoved - MonthlyContribution, x));
                 moneyMoved = x;
             }
             return MonthlyIRDatas;

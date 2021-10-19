@@ -5,10 +5,32 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
 
-    <form asp-controller="Home" asp-action="StockInvestments">
+    <!-- Stock/Home Investment Buttons -->
+    <div class="row justify-content-center">
 
-        <input type="submit" class="btn btn-success" value="Sock Investments"/>
-    </form>
+        <div class="col-2">
+
+            <!-- Stock Investments -->
+            <form asp-controller="Home" asp-action="StockInvestments">
+
+                <input type="submit" class="btn btn-success" value="Sock Investments" />
+
+            </form>
+
+        </div>
+
+        <div class="col-2">
+
+            <!-- Home Investments -->
+            <form asp-controller="Home" asp-action="NewHomeInvestment">
+
+                <input type="submit" class="btn btn-primary" value="Home Investments" />
+
+            </form>
+
+        </div>
+
+    </div>
 
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 

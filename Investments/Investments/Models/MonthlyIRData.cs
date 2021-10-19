@@ -6,13 +6,15 @@ namespace Investments.Models
 
         public double Money { get; set; }
         public double MonthlyProfit { get; set; }
+        public double MoneyContribution { get; set; }
 
         public MonthlyIRData(){}
 
-        public MonthlyIRData(double money, double monthlyProfit)
+        public MonthlyIRData(double moneyContribution, double monthlyProfit, double money)
         {
-            Money = money;
+            MoneyContribution = moneyContribution;
             MonthlyProfit = monthlyProfit;
+            Money = money;
         }
     }
 }
