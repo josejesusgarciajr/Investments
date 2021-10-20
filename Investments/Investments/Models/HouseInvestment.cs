@@ -34,6 +34,12 @@ namespace Investments.Models
          */
         public double RentPrayment { get; set; }
 
+        /*
+         * Payment Info
+         */
+        public double TotalCostPayed { get; set; }
+        public double PayedIntrest { get; set; }
+
         public HouseInvestment()
         {
         }
@@ -85,6 +91,18 @@ namespace Investments.Models
             MortgageMonthlyPayment = top / bottom;
 
             return MortgageMonthlyPayment;
+        }
+
+        /*
+         * Total Cost of House
+         * Total Payed in Intrest
+         */
+        public double CalculateTotalCostAndPayedIntrest()
+        {
+            TotalCostPayed = MortgageMonthlyPayment * DurationOfLoanInYears * 12;
+            PayedIntrest = TotalCostPayed - PriceOfHouse;
+
+            return PayedIntrest;
         }
     }
 }

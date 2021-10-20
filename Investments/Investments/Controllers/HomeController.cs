@@ -37,6 +37,7 @@ namespace Investments.Controllers
         {
             houseInvestment.Principle = houseInvestment.PriceOfHouse;
             houseInvestment.CalculateMortgagePayment();
+            houseInvestment.CalculateTotalCostAndPayedIntrest();
 
             return View(houseInvestment);
         }

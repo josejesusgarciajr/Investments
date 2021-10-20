@@ -7,7 +7,14 @@
 
     <h1 class="display-4">Mortgage Monthly Payment</h1>
     <h3 class="display-4">
-        <code> @String.Format("{0:0,0.##}", Model.MortgageMonthlyPayment) </code>
+        <code> $@String.Format("{0:0,0.##}", Model.MortgageMonthlyPayment) </code>
     </h3>
+
+    <div>
+        <p class="lead">
+            The total money paid for this house was <code>$@String.Format("{0:0,0.##}", Model.TotalCostPayed)</code> and
+            the you paid <code>$@String.Format("{0:0,0.##}", Model.PayedIntrest)</code> in intrest.
+        </p>
+    </div>
 
 </div>
