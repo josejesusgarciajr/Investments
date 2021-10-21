@@ -35,11 +35,16 @@ namespace Investments.Controllers
 
         public IActionResult CalculateHouseInfomation(HouseInvestment houseInvestment)
         {
-            houseInvestment.Principle = houseInvestment.PriceOfHouse;
-            houseInvestment.CalculateMortgagePayment();
-            houseInvestment.CalculateTotalCostAndPayedIntrest();
+            // new
+            ListOfHouse listOfHouses = new ListOfHouse();
+            listOfHouses.CalculatePaymentAtDifferentIntrestRates(houseInvestment);
 
-            return View(houseInvestment);
+            // old 
+            //houseInvestment.Principle = houseInvestment.PriceOfHouse;
+            //houseInvestment.CalculateMortgagePayment();
+            //houseInvestment.CalculateTotalCostAndPayedIntrest();
+
+            return View(listOfHouses);
         }
 
         public IActionResult CalculateInvestments(Client client)

@@ -1,20 +1,34 @@
-﻿@model Investments.Models.HouseInvestment;
+﻿@model Investments.Models.ListOfHouse;
 @{
     ViewData["Title"] = "House Information";
 }
 
-<div class="text-center">
+<!--
+    create loop to view mortage payment at
+    different intrest rates
+-->
 
-    <h1 class="display-4">Mortgage Monthly Payment</h1>
-    <h3 class="display-4">
-        <code> $@String.Format("{0:0,0.##}", Model.MortgageMonthlyPayment) </code>
-    </h3>
-
-    <div>
-        <p class="lead">
-            The total money paid for this house was <code>$@String.Format("{0:0,0.##}", Model.TotalCostPayed)</code> and
-            the you paid <code>$@String.Format("{0:0,0.##}", Model.PayedIntrest)</code> in intrest.
-        </p>
+@foreach (HouseInvestment house in Model.LOH)
+{
+    <div class="card text-center">
+        <div class="card-header">
+            <code>
+                Fixed Intrest Rate: @house.FixedIntrestRate%
+            </code>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title display-4">
+                Mortgage Payment: <code>
+                    $@String.Format("{0:0,0.##}", house.MortgageMonthlyPayment)
+                </code>
+            </h4>
+            <p class="card-text">
+                The total money paid for this house was <code>$@String.Format("{0:0,0.##}", house.TotalCostPayed)</code> and
+                the you paid <code>$@String.Format("{0:0,0.##}", house.PayedIntrest)</code> in intrest.
+            </p>
+        </div>
     </div>
+    <br />
+}
 
-</div>
+
