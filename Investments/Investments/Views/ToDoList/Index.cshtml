@@ -29,10 +29,12 @@
                     <p class="card-text">@assignment.DateTime.ToString("D")</p>
 
                     <!-- Edit Assignment -->
-                    <a asp-controller="ToDoList" asp-action="EditAssignmentView" class="btn btn-primary">Edit</a>
+                    <a asp-controller="ToDoList" asp-action="EditAssignmentView"
+                       asp-route-id="@assignment.ID" class="btn btn-warning">Edit</a>
 
                     <!-- Delete Assignment -->
-                    <a asp-controller="ToDoList" asp-action="DeleteAssignment">Delete</a>
+                    <a asp-controller="ToDoList" asp-action="DeleteAssignment"
+                       asp-route-id="@assignment.ID" class="btn btn-danger">Delete</a>
                 </div>
             </div>
             <br />

@@ -15,7 +15,6 @@ namespace Investments.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            Console.WriteLine($"Assignment Count: {ToDoList.ListOfAssignments.Count}");
             return View(ToDoList);
         }
 
@@ -30,7 +29,68 @@ namespace Investments.Controllers
         public IActionResult AddItem(ToDo toDo)
         {
             ToDoList.AddAssignment(toDo);
-            Console.WriteLine($"Number of Assignments: {ToDoList.ListOfAssignments.Count}");
+
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult EditAssignmentView(int id)
+        {
+            ToDo toDo = new ToDo();
+            toDo.ID = id;
+            /*
+             * find to do in list
+             */
+            int index = 0;
+            foreach(ToDo assignment in ToDoList.ListOfAssignments)
+            {
+                if(id == assignment.ID)
+                {
+                    break;
+                }
+                index++;
+            }
+
+            toDo.Assignment= ToDoList.ListOfAssignments[index].Assignment;
+            toDo.DateTime = ToDoList.ListOfAssignments[index].DateTime;
+
+            return View(toDo);
+        }
+
+        public IActionResult EditAssignment(ToDo toDo)
+        {
+            /*
+             * Find Index of Assignment
+             */
+            int index = 0;
+            foreach(ToDo assignment in ToDoList.ListOfAssignments)
+            {
+                if(toDo.ID == assignment.ID)
+                {
+                    break;
+                }
+                index++;
+            }
+            ToDoList.ListOfAssignments[index].Assignment = toDo.Assignment;
+
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult DeleteAssignment(int id)
+        {
+            /*
+             * Find Assignment to Delete
+             */
+            int index = 0;
+            foreach(ToDo assignment in ToDoList.ListOfAssignments)
+            {
+                if(id == assignment.ID)
+                {
+                    break;
+                }
+                index++;
+            }
+            ToDo deleteToDo = ToDoList.ListOfAssignments[index];
+            ToDoList.ListOfAssignments.Remove(deleteToDo);
 
             return RedirectToAction("Index");
         }

@@ -1,0 +1,31 @@
+﻿@model Investments.Models.ToDo;
+@{
+    ViewData["Title"] = "Edit Assignment";
+}
+
+<div class="text-center">
+    <h2 class="display-4">Edit Assignment</h2>
+</div>
+
+<div>
+    <form asp-controller="ToDoList" asp-action="EditAssignment">
+
+        <!-- Hidden Field for ID-->
+        <input asp-for="ID"
+               type="hidden" value="@Model.ID" />
+
+        <!-- Hidden Field for DatTime -->
+        
+
+        <!-- Edit Assignment -->
+        <label class="lead">
+            <code>Edit Assignment:</code>
+        </label>
+        <input asp-for="Assignment"
+               type="text" class="form-control" value="@Model.Assignment" /> <br />
+
+        <!-- Update Assignment -->
+        <input type="submit" class="btn btn-warning"
+               value="Update Assignment" />
+    </form>
+</div>

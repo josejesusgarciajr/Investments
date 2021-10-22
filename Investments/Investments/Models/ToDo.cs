@@ -3,6 +3,7 @@ namespace Investments.Models
 {
     public class ToDo
     {
+        public int ID { get; set; }
         public string Assignment { get; set; }
         public DateTime DateTime { get; set; }
 

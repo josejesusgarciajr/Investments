@@ -6,6 +6,7 @@ namespace Investments.Models
     public class ToDoList
     {
         public List<ToDo> ListOfAssignments { get; set; }
+        public static int ID { get; set; }
 
         public ToDoList()
         {
@@ -17,6 +18,12 @@ namespace Investments.Models
          */
         public void AddAssignment(ToDo toDo)
         {
+            /*
+             * Generate ID
+             * of Assignment
+             */
+            toDo.ID = ID++;
+
             /*
              * Stamp Assignment 
              * with today's Date/Time
