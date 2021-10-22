@@ -8,9 +8,9 @@
     <!-- Stock/Home Investment Buttons -->
     <div class="row justify-content-center">
 
+        <!-- Stock Investments -->
         <div class="col-2">
 
-            <!-- Stock Investments -->
             <form asp-controller="Home" asp-action="StockInvestments">
 
                 <input type="submit" class="btn btn-success" value="Sock Investments" />
@@ -19,15 +19,24 @@
 
         </div>
 
+        <!-- Home Investments -->
         <div class="col-2">
 
-            <!-- Home Investments -->
             <form asp-controller="Home" asp-action="NewHomeInvestment">
 
                 <input type="submit" class="btn btn-primary" value="Home Investments" />
 
             </form>
 
+        </div>
+
+        <!-- To Do List -->
+        <div class="col-2">
+            <form asp-controller="ToDoList" asp-action="Index">
+
+                <input type="submit" class="btn btn-warning" value="To Do List Jose" />
+
+            </form>
         </div>
 
     </div>

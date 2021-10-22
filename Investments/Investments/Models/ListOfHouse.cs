@@ -30,6 +30,8 @@ namespace Investments.Models
                 x.CalculateTotalCostAndPayedIntrest();
     
                 LOH.Add(x);
+                HouseInvestment e = LOH[LOH.Count - 1];
+                Console.WriteLine($"Last item intrestRate: {e.FixedIntrestRate}");
             }
 
             return LOH;

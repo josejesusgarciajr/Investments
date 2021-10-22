@@ -1,0 +1,26 @@
+﻿@model Investments.Models.ToDo;
+@{
+    ViewData["Title"] = "Add Assignment";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Add Assignment</h1>
+    
+</div>
+
+<div>
+    <form asp-controller="ToDoList" asp-action="AddItem">
+
+        <!-- Assignment -->
+        <label class="lead">Assignment:</label>
+        <input class="form-control" asp-for="Assignment"
+               type="text" placeholder="Start Applying for Entry Level Positions Near LA" />
+        <br />
+
+        <!-- Add Assignment Button -->
+        <input class="btn btn-success"
+               type="submit" value="Add Assignment" />
+
+    </form>
+</div>
