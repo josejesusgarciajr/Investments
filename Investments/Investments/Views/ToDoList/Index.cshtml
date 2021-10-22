@@ -26,7 +26,7 @@
                 <div class="card-body">
                     <!-- Assignment Info -->
                     <h5 class="card-title">@assignment.Assignment</h5>
-                    <p class="card-text">@assignment.DateTime</p>
+                    <p class="card-text">@assignment.DateTime.ToString("D")</p>
 
                     <!-- Edit Assignment -->
                     <a asp-controller="ToDoList" asp-action="EditAssignmentView" class="btn btn-primary">Edit</a>

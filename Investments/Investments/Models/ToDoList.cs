@@ -17,6 +17,16 @@ namespace Investments.Models
          */
         public void AddAssignment(ToDo toDo)
         {
+            /*
+             * Stamp Assignment 
+             * with today's Date/Time
+             */
+            DateTime dateTime = DateTime.Today;
+            toDo.DateTime = dateTime;
+
+            /*
+             * Add Assignment to List
+             */
             ListOfAssignments.Add(toDo);
         }
 
