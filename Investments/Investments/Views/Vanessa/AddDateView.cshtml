@@ -1,0 +1,39 @@
+﻿@model Investments.Models.DateIdea;
+@{
+    ViewData["Title"] = "Add Date Idea";
+}
+
+<div class="text-center">
+    <h2 class="display-4">Add Date Idea</h2>
+</div>
+
+
+<div>
+    <form asp-controller="Vanessa" asp-action="AddDateIdea">
+
+        <!-- Name of Date Idea -->
+        <label><code>Name:</code></label>
+        <input type="text" asp-for="NameOfEvent"
+               class="form-control" />
+
+        <!-- Address -->
+        <label><code>Address:</code></label>
+        <input type="text" asp-for="Address"
+               class="form-control" />
+
+        <!-- Href -->
+        <label><code>Link:</code></label>
+        <input type="text" asp-for="Href"
+               class="form-control" />
+
+        <!-- Image -->
+        <label><code>Image:</code></label>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile" asp-for="ImageFile">
+            <label class="custom-file-label" for="customFile">Choose Image</label>
+        </div> <br /><br />
+
+        <!-- Submit Button -->
+        <input type="submit" value="Add Date" class="btn btn-success"/>
+    </form>
+</div>

@@ -1,0 +1,28 @@
+﻿@model List<DateIdea> 
+@{
+    ViewData["Title"] = "Date Ideas";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Date Ideas</h1>
+
+    <form asp-controller="Vanessa" asp-action="AddDateView">
+        <input type="submit" class="btn btn-success" value="Add Date"/>
+    </form>
+</div>
+
+<div class="container">
+
+    <!-- Display Date Ideas -->
+    @foreach(DateIdea dateIdea in Model)
+    {
+        <div class="container">
+            
+            <a asp-controller="Vanessa" asp-action="DisplayDateIdeaView" asp-route-id="@dateIdea.ID">
+                @dateIdea.NameOfEvent
+            </a>
+
+        </div>
+    }
+</div>
+

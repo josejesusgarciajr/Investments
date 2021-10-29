@@ -1,0 +1,27 @@
+﻿using System;
+using Microsoft.AspNetCore.Http;
+
+namespace Investments.Models
+{
+    public class DateIdea
+    {
+        public int ID { get; set; }
+        public string NameOfEvent { get; set; }
+        public string Address { get; set; }
+        public DateTime DateOfEvent { get; set; }
+        public string Href { get; set; }
+
+        /*
+         *  IFormFile used when uploading an
+         *  image to the menu item
+         */
+        public IFormFile ImageFile { get; set; }
+        public string ImagePath { get; set; }
+
+        public DateIdea()
+        {
+            
+        }
+
+    }
+}
