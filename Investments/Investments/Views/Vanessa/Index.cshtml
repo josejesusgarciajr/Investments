@@ -13,16 +13,23 @@
 
 <div class="container">
 
-    <!-- Display Date Ideas -->
-    @foreach(DateIdea dateIdea in Model)
-    {
-        <div class="container">
-            
-            <a asp-controller="Vanessa" asp-action="DisplayDateIdeaView" asp-route-id="@dateIdea.ID">
-                @dateIdea.NameOfEvent
-            </a>
+    <div class="row">
 
-        </div>
-    }
+        <!-- Display Date Ideas -->
+        @foreach(DateIdea dateIdea in Model)
+        {
+            <div class="col-6">
+
+                <a asp-controller="Vanessa" asp-action="DisplayDateIdeaView" asp-route-id="@dateIdea.ID">
+                    @dateIdea.NameOfEvent
+                    <img src="@dateIdea.ImagePath"
+                             width="400" height="230" />
+                </a>
+
+            </div>
+        }
+
+    </div>
+
 </div>
 

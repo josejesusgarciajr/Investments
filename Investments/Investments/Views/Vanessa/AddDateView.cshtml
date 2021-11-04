@@ -9,31 +9,37 @@
 
 
 <div>
-    <form asp-controller="Vanessa" asp-action="AddDateIdea">
+    <form asp-controller="Vanessa" asp-action="AddDateIdea" enctype="multipart/form-data">
 
         <!-- Name of Date Idea -->
         <label><code>Name:</code></label>
         <input type="text" asp-for="NameOfEvent"
-               class="form-control" />
+               class="form-control" placeholder="The Light Fest"/>
 
         <!-- Address -->
         <label><code>Address:</code></label>
         <input type="text" asp-for="Address"
-               class="form-control" />
-
-        <!-- Href -->
-        <label><code>Link:</code></label>
-        <input type="text" asp-for="Href"
-               class="form-control" />
+               class="form-control" placeholder="Superstition Mountain 3400 Wheeler Rd. Imperial, CA 92251"/>
 
         <!-- Image -->
         <label><code>Image:</code></label>
         <div class="custom-file">
             <input type="file" class="custom-file-input" id="customFile" asp-for="ImageFile">
             <label class="custom-file-label" for="customFile">Choose Image</label>
-        </div> <br /><br />
+        </div>
+
+        <!-- Href -->
+        <label><code>Link:</code></label>
+        <input type="text" asp-for="Href"
+               class="form-control" placeholder="https://thelightsfest.com"/>
+
+        <!-- Text for Link to Date Idea -->
+        <label><code>Link Text:</code></label>
+        <input type="text" asp-for="LinkText"
+               class="form-control" placeholder="The Light Fest"/>
+        <br /><br />
 
         <!-- Submit Button -->
-        <input type="submit" value="Add Date" class="btn btn-success"/>
+        <input type="submit" value="Add Date" class="btn btn-success" />
     </form>
 </div>

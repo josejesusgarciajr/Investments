@@ -9,7 +9,12 @@ namespace Investments.Models
         public string NameOfEvent { get; set; }
         public string Address { get; set; }
         public DateTime DateOfEvent { get; set; }
+
+        /*
+         * Information for Link
+         */
         public string Href { get; set; }
+        public string LinkText { get; set; }
 
         /*
          *  IFormFile used when uploading an
