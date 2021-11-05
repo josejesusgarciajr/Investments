@@ -28,5 +28,15 @@ namespace Investments.Models
             
         }
 
+        public DateIdea(int id, string nameOfEvent, string address, string href, string linkText, string imagePath)
+        {
+            ID = id;
+            NameOfEvent = nameOfEvent;
+            Address = address;
+            Href = href;
+            LinkText = linkText;
+            ImagePath = imagePath;
+        }
+
     }
 }

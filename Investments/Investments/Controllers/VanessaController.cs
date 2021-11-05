@@ -25,6 +25,10 @@ namespace Investments.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
+            // GET the Date Ideas From DataBase
+            QueryDB queryDB = new QueryDB();
+            DateIdeas = queryDB.GetDateIdeas();
+
             return View(DateIdeas);
         }
 
@@ -61,6 +65,11 @@ namespace Investments.Controllers
             dateIdea.ImagePath = folderAndDirectories.PutImageTo(dateIdea.ImageFile, "Images");
 
             DateIdeas.Add(dateIdea);
+
+            // add to DataBase
+            QueryDB queryDB = new QueryDB();
+            queryDB.AddDateIdeaToDB(dateIdea);
+
             return RedirectToAction("Index");
         }
     }
