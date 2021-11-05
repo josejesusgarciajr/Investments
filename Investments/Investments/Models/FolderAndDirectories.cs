@@ -38,7 +38,8 @@ namespace Investments.Models
                 image.CopyTo(new FileStream(destinationFile, FileMode.Create));
             }
 
-            return destinationFile;
+            return $"/{dir}/" + image.FileName;
+
         }
 
     }
