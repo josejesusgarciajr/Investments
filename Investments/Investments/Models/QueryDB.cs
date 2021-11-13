@@ -13,6 +13,37 @@ namespace Investments.Models
             CS = "Server=localhost;Database=TEST;User Id=sa;Password=myPassw0rd;";
         }
 
+        public DateIdea GetDateIdea(int id)
+        {
+            DateIdea dateIdea = new DateIdea();
+            // establish sql connection
+            using(SqlConnection sqlConnection = new SqlConnection(CS))
+            {
+                // query
+                string query = "SELECT * FROM DateIdeas"
+                    + $" WHERE ID={id};";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+
+                // open connection
+                sqlConnection.Open();
+
+                using(SqlDataReader reader = sqlCommand.ExecuteReader())
+                {
+                    while(reader.Read())
+                    {
+                        dateIdea = new DateIdea((int) reader[0], (string) reader[1], (string) reader[2],
+                            (string) reader[3], (string) reader[4], (string) reader[5]);
+                    }
+                }
+
+                // close connection
+                sqlConnection.Close();
+
+            }
+
+            return dateIdea;
+        }
+
         public List<DateIdea> GetDateIdeas()
         {
             List<DateIdea> dateIdeas = new List<DateIdea>();
@@ -59,6 +90,22 @@ namespace Investments.Models
                 sqlCommand.ExecuteNonQuery();
 
                 sqlConnection.Close();
+            }
+        }
+
+        public void DeleteDateIdea(DateIdea dateIdea)
+        {
+            // establish sql connection
+            using(SqlConnection sqlConnection = new SqlConnection(CS))
+            {
+                string query = $"DELETE FROM DateIdeas WHERE ID={dateIdea.ID};";
+
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+
+                sqlConnection.Open();
+                sqlCommand.ExecuteNonQuery();
+                sqlConnection.Close();
+
             }
         }
     }

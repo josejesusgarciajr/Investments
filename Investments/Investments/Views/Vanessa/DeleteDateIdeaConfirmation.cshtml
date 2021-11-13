@@ -1,0 +1,22 @@
+﻿@model Investments.Models.DateIdea;
+
+@{
+    ViewData["Title"] = "Delete Date Idea";
+}
+
+<h1 class="text-center display-4">Delete Date Idea</h1>
+<p class="lead">Date Idea to be Deleted:
+    <code>
+        @Model.NameOfEvent
+    </code>
+</p>
+
+<div class="alert alert-danger" role="alert">
+    This action can not be undone. Are you sure you want to delete this Date Idea?
+</div>
+
+<form asp-controller="Vanessa" asp-action="DeleteDateIdeaFromDB" asp-route-id="@Model.ID">
+    <input class="btn btn-danger"
+           type="submit" value="Delete Date Idea: @Model.NameOfEvent"/>
+</form>
+

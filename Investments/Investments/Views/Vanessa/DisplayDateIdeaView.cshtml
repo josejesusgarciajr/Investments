@@ -20,3 +20,37 @@
 
 <code class="lead">Address:</code>
 <p class="lead">@Model.Address</p>
+
+
+
+<div class="row">
+
+    <div class="col-6">
+
+        <!-- Edit Button-->
+        <form asp-controller="Vanessa" asp-action="EditDateIdeaView" asp-route-id="@Model.ID">
+
+            <input class="btn btn-info col-6"
+                   type="submit" value="Edit"/>
+
+        </form>
+
+    </div>
+
+
+    <div class="col-6">
+
+        <!-- Delete Button-->
+        <form asp-controller="Vanessa" asp-action="DeleteDateIdeaConfirmation" asp-route-id="@Model.ID">
+
+            <input class="btn btn-danger col-6"
+                   type="submit"
+        value="Delete"/>
+
+        </form>
+
+    </div>
+</div>
+
+
+

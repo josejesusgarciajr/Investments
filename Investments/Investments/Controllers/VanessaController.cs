@@ -53,6 +53,22 @@ namespace Investments.Controllers
             return View(date);
         }
 
+        public IActionResult DeleteDateIdeaConfirmation(int id)
+        {
+            QueryDB queryDB = new QueryDB();
+            DateIdea dateIdea = queryDB.GetDateIdea(id);
+            return View(dateIdea);
+        }
+
+        public IActionResult DeleteDateIdeaFromDB(int id)
+        {
+            QueryDB queryDB = new QueryDB();
+            DateIdea dateIdea = queryDB.GetDateIdea(id);
+            queryDB.DeleteDateIdea(dateIdea);
+
+            return RedirectToAction("Index");
+        }
+
         public IActionResult AddDateIdea(DateIdea dateIdea)
         {
             dateIdea.ID = IDForDateIdeas;
