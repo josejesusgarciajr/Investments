@@ -1,0 +1,43 @@
+﻿@model DateIdea;
+@{
+    ViewData["Title"] = "Edit Date Idea";
+}
+
+<div class="text-center container">
+    <h1 class="display-4">Edit Date Idea</h1>
+</div>
+
+<div class="container">
+    <form asp-controller="Vanessa" asp-action="UpdateDateIdea">
+
+        <!-- ID -->
+        <input asp-for="ID" value="@Model.ID"
+               type="hidden"/>
+
+        <!-- NAME OF EVENT -->
+        <label><code class="lead">Name of Event:</code></label>
+        <input class="form-control" asp-for="NameOfEvent"
+               type="text" value="@Model.NameOfEvent" placeholder="@Model.NameOfEvent" />
+
+        <!-- ADDRESS -->
+        <label><code class="lead">Address:</code></label>
+        <input class="form-control" asp-for="Address"
+               type="text" value="@Model.Address" placeholder="@Model.Address" />
+
+        <!-- HREF -->
+        <label><code class="lead">Href:</code></label>
+        <input class="form-control" asp-for="Href"
+               type="text" value="@Model.Href" placeholder="@Model.Href" />
+
+        <!-- LINK-TEXT -->
+        <label><code class="lead">Link-Text:</code></label>
+        <input class="form-control" asp-for="LinkText"
+               type="text" value="@Model.LinkText" placeholder="@Model.LinkText" />
+        <br /><br />
+
+        <!-- SUBMIT BUTTON -->
+        <input class="btn btn-success"
+               type="submit" value="Update Date Idea" />
+
+    </form>
+</div>

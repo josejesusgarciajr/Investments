@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
@@ -106,6 +107,29 @@ namespace Investments.Models
                 sqlCommand.ExecuteNonQuery();
                 sqlConnection.Close();
 
+            }
+        }
+
+        public void UpdateDateIdea(DateIdea dateIdea)
+        {
+            // establish sql connection
+            using(SqlConnection sqlConnection = new SqlConnection(CS))
+            {
+                // query
+                string query = "UPDATE DateIdeas" + 
+                    $" SET NameOfEvent = '{dateIdea.NameOfEvent}', Address = '{dateIdea.Address}'," +
+                    $" Href = '{dateIdea.Href}', LinkText = '{dateIdea.LinkText}'" +
+                    $" WHERE ID = {dateIdea.ID};";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+
+                // open connection
+                sqlConnection.Open();
+
+                // update date idea
+                sqlCommand.ExecuteNonQuery();
+
+                // close connection
+                sqlConnection.Close();
             }
         }
     }

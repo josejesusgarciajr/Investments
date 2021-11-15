@@ -88,6 +88,22 @@ namespace Investments.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public IActionResult EditDateIdeaView(int id)
+        {
+            QueryDB queryDB = new QueryDB();
+            DateIdea dateIdea = queryDB.GetDateIdea(id);
+
+            return View(dateIdea);
+        }
+
+        public IActionResult UpdateDateIdea(DateIdea dateIdea)
+        {
+            QueryDB queryDB = new QueryDB();
+            queryDB.UpdateDateIdea(dateIdea);
+
+            return RedirectToAction("Index");
+        }
     }
 
     /*
