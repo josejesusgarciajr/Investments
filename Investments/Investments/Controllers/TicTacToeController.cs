@@ -18,9 +18,9 @@ namespace Investments.Controllers
             return View();
         }
 
-        public IActionResult DisplayGame()
+        public IActionResult DisplayGame(Game game)
         {
-            return View();
+            return View(game);
         }
     }
 }
