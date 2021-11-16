@@ -1,0 +1,14 @@
+﻿@model Game;
+@{
+    ViewData["Title"] = "FIGHT!!!";
+}
+
+<div class="text-center">
+    <h1 class="display-4">
+        @Model.Player1.Name: @Model.Player1.Wins
+         VS
+        @Model.Player2.Name: @Model.Player2.Wins
+    </h1>
+</div>
+
+<!-- THE GAME -->

@@ -106,8 +106,4 @@ namespace Investments.Controllers
         }
     }
 
-    /*
-     * https://localhost:5001/Users/jginvincible/git/Investments/Investments/Investments/wwwroot/Images/Jurrasic_World.jpg
-     * Users/jginvincible/git/Investments/Investments/Investments/wwwroot/Images/Jurrasic_World.jpg
-     */
 }

@@ -1,0 +1,28 @@
+﻿@model Game;
+@{
+    ViewData["Title"] = "Main Menu - TicTacToe";
+}
+
+<div class="text-center">
+    <h1 class="display-4"><code>TicTacToe</code></h1>
+</div>
+
+<div class="container">
+
+    <form asp-controller="TicTacToe" asp-action="DisplayGame">
+        <!-- Player 1 -->
+        <label class="lead">Player 1:</label>
+        <input class="form-control"
+               type="text" asp-for="Player1.Name" />
+
+        <!-- Player 2 -->
+        <label class="lead">Player 2:</label>
+        <input class="form-control"
+               type="text" asp-for="Player2.Name" />
+
+        <!-- Submit Button -->
+        <br />
+        <input class="btn btn-primary"
+               type="submit" value="FIGHT!" />
+    </form>
+</div>

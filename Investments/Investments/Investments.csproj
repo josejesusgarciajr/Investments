@@ -7,6 +7,7 @@
   <ItemGroup>
     <Folder Include="Views\ToDoList\" />
     <Folder Include="Views\Vanessa\" />
+    <Folder Include="Views\TicTacToe\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
