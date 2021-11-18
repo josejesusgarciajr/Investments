@@ -9,51 +9,181 @@
          VS
         @Model.Player2.Name: @Model.Player2.Wins
     </h1>
+
+    <h3 class="lead"><code>@Model.PlayerTurn.Name's Turn</code></h3>
 </div>
 
 <!-- THE GAME -->
 
 <div class="row">
-    <a asp-controller="TicTacToe" aps-action="PlayerMove" class="col-4">
-        <img style="border:2px solid black"
-             width="320" height="225" src="/Images/white.png" />
+    <a asp-controller="TicTacToe" asp-action="PlayerMove" class="col-4"
+       asp-route-row="0" asp-route-col="0" asp-route-c="@Model.PlayerTurn.C">
+
+        @if (Model.TicTacToeGame[0, 0].Equals('x'))
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/x.png" />
+        }
+        else if (Model.TicTacToeGame[0, 0].Equals('o'))
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/o.png" />
+        }
+        else
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/white.png" />
+        }
+
     </a>
-    <a asp-controller="TicTacToe" aps-action="PlayerMove" class="col-4">
-        <img style="border:2px solid black"
-             width="320" height="225" src="/Images/white.png" />
+    <a asp-controller="TicTacToe" asp-action="PlayerMove" class="col-4"
+       asp-route-row="0" asp-route-col="1" asp-route-c="@Model.PlayerTurn.C">
+        @if (Model.TicTacToeGame[0, 1].Equals('x'))
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/x.png" />
+        }
+        else if (Model.TicTacToeGame[0, 1].Equals('o'))
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/o.png" />
+        }
+        else
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/white.png" />
+        }
     </a>
-    <a asp-controller="TicTacToe" aps-action="PlayerMove" class="col-4">
-        <img style="border:2px solid black"
-             width="320" height="225" src="/Images/white.png" />
+    <a asp-controller="TicTacToe" asp-action="PlayerMove" class="col-4"
+       asp-route-row="0" asp-route-col="2" asp-route-c="@Model.PlayerTurn.C">
+        @if (Model.TicTacToeGame[0, 2].Equals('x'))
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/x.png" />
+        }
+        else if (Model.TicTacToeGame[0, 2].Equals('o'))
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/o.png" />
+        }
+        else
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/white.png" />
+        }
     </a>
 </div>
 
 <div class="row">
-    <a asp-controller="TicTacToe" aps-action="PlayerMove"  class="col-4">
-        <img style="border:2px solid black"
-             width="320" height="225" src="/Images/white.png" />
+    <a asp-controller="TicTacToe" asp-action="PlayerMove" class="col-4"
+       asp-route-row="1" asp-route-col="0" asp-route-c="@Model.PlayerTurn.C">
+        @if (Model.TicTacToeGame[1, 0].Equals('x'))
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/x.png" />
+        }
+        else if (Model.TicTacToeGame[1, 0].Equals('o'))
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/o.png" />
+        }
+        else
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/white.png" />
+        }
     </a>
-    <a asp-controller="TicTacToe" aps-action="PlayerMove" class="col-4">
-        <img style="border:2px solid black"
-             width="320" height="225" src="/Images/white.png" />
+    <a asp-controller="TicTacToe" asp-action="PlayerMove" class="col-4"
+       asp-route-row="1" asp-route-col="1" asp-route-c="@Model.PlayerTurn.C">
+        @if (Model.TicTacToeGame[1, 1].Equals('x'))
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/x.png" />
+        }
+        else if (Model.TicTacToeGame[1, 1].Equals('o'))
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/o.png" />
+        }
+        else
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/white.png" />
+        }
     </a>
-    <a asp-controller="TicTacToe" aps-action="PlayerMove" class="col-4">
-        <img style="border:2px solid black"
-             width="320" height="225" src="/Images/white.png" />
+    <a asp-controller="TicTacToe" asp-action="PlayerMove" class="col-4"
+       asp-route-row="1" asp-route-col="2" asp-route-c="@Model.PlayerTurn.C">
+        @if (Model.TicTacToeGame[1, 2].Equals('x'))
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/x.png" />
+        }
+        else if (Model.TicTacToeGame[1, 2].Equals('o'))
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/o.png" />
+        }
+        else
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/white.png" />
+        }
     </a>
 </div>
 
 <div class="row">
-    <a asp-controller="TicTacToe" aps-action="PlayerMove" class="col-4">
-        <img style="border:2px solid black"
-             width="320" height="225" src="/Images/white.png" />
+    <a asp-controller="TicTacToe" asp-action="PlayerMove" class="col-4"
+       asp-route-row="2" asp-route-col="0" asp-route-c="@Model.PlayerTurn.C">
+        @if (Model.TicTacToeGame[2, 0].Equals('x'))
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/x.png" />
+        }
+        else if (Model.TicTacToeGame[2, 0].Equals('o'))
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/o.png" />
+        }
+        else
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/white.png" />
+        }
     </a>
-    <a asp-controller="TicTacToe" aps-action="PlayerMove" class="col-4">
-        <img style="border:2px solid black"
-             width="320" height="225" src="/Images/white.png" />
+    <a asp-controller="TicTacToe" asp-action="PlayerMove" class="col-4"
+       asp-route-row="2" asp-route-col="1" asp-route-c="@Model.PlayerTurn.C">
+        @if (Model.TicTacToeGame[2, 1].Equals('x'))
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/x.png" />
+        }
+        else if (Model.TicTacToeGame[2, 1].Equals('o'))
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/o.png" />
+        }
+        else
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/white.png" />
+        }
     </a>
-    <a asp-controller="TicTacToe" aps-action="PlayerMove" class="col-4">
-        <img style="border:2px solid black"
-             width="320" height="225" src="/Images/white.png" />
+    <a asp-controller="TicTacToe" asp-action="PlayerMove" class="col-4"
+       asp-route-row="2" asp-route-col="2" asp-route-c="@Model.PlayerTurn.C">
+        @if (Model.TicTacToeGame[2, 2].Equals('x'))
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/x.png" />
+        }
+        else if (Model.TicTacToeGame[2, 2].Equals('o'))
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/o.png" />
+        }
+        else
+        {
+            <img style="border:2px solid black"
+                 width="320" height="225" src="/Images/white.png" />
+        }
     </a>
 </div>

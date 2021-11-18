@@ -7,9 +7,14 @@ namespace Investments.Models
         public Player Player1 { get; set; }
         public Player Player2 { get; set; }
 
+        public Player PlayerTurn { get; set; }
+
         public Game()
         {
             TicTacToeGame = new char[3, 3];
+            Player1 = new Player();
+            Player2 = new Player();
+            PlayerTurn = new Player();
         }
 
         public Game(Player player1, Player player2)
