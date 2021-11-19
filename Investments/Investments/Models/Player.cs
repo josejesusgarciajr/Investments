@@ -7,6 +7,8 @@ namespace Investments.Models
         public int Wins { get; set; }
         public char C { get; set; }
 
+        public string CelebrationGifPath { get; set; }
+
         public Player() {}
 
         public Player(string name)

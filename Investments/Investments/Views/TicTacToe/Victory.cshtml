@@ -1,0 +1,13 @@
+﻿@model Game;
+@{
+    ViewData["Title"] = Model.PlayerTurn.Name + " WINS!!!";
+}
+
+<div class="text-center">
+    <h1 class="display-4"><code>@Model.PlayerTurn.Name WINS!!!</code></h1>
+    <a asp-controller="Vanessa" asp-action="DisplayGame" asp-route-g="@Model">
+        <img class="img-fluid"
+             src="@Model.PlayerTurn.CelebrationGifPath"/>
+    </a>
+
+</div>

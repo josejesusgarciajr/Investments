@@ -39,6 +39,14 @@ namespace Investments.Controllers
             // mark player turn
             game.TicTacToeGame[row, col] = c;
 
+            // check to see if player won
+            bool victory = game.CheckForVictory();
+
+            if(victory)
+            {
+                return RedirectToAction("Victory");
+            }
+
             // next players move
             if(game.PlayerTurn.C.Equals(game.Player1.C))
             {
@@ -49,6 +57,20 @@ namespace Investments.Controllers
             }
 
             return RedirectToAction("DisplayGame", game);
+        }
+
+        public IActionResult Victory()
+        {
+            Console.WriteLine($"PlayerTurn Victory: {game.PlayerTurn.Name}");
+            if(game.PlayerTurn.Name == game.Player1.Name)
+            {
+                game.PlayerTurn.CelebrationGifPath = "/Images/TicTacToe/Vanessa.gif";
+            } else
+            {
+                game.PlayerTurn.CelebrationGifPath = "/Images/TicTacToe/Jose.gif";
+            }
+
+            return View(game);
         }
     }
 }

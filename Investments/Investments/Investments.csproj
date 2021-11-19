@@ -8,6 +8,7 @@
     <Folder Include="Views\ToDoList\" />
     <Folder Include="Views\Vanessa\" />
     <Folder Include="Views\TicTacToe\" />
+    <Folder Include="wwwroot\Images\TicTacToe\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />

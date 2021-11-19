@@ -28,16 +28,19 @@ namespace Investments.Models
         {
             if(VerticalWin())
             {
+                Console.WriteLine($"Vertical Win");
                 return true;
             }
 
             if(HorizontalWin())
             {
+                Console.WriteLine($"Horizontal Win");
                 return true;
             }
 
             if(DiagonalWin())
             {
+                Console.WriteLine($"Diagonal Win");
                 return true;
             }
 
@@ -64,21 +67,29 @@ namespace Investments.Models
 
                 for(int row = 1; row < 3; row++)
                 {
-                    if(c != TicTacToeGame[row, col])
+                    if(c == '\0')
                     {
                         match = 0;
                         break;
-                    } else
+                    }
+
+                    if (!c.Equals(TicTacToeGame[row, col]))
+                    {
+                        match = 0;
+                        break;
+                    }
+                    else
                     {
                         match++;
                     }
 
-                    if(match == 2)
+                    if (match == 2)
                     {
                         player.Wins++;
                         return true;
                     }
                 }
+                match = 0;
             }
 
             return false;
@@ -93,6 +104,13 @@ namespace Investments.Models
                 Player player = CheckPlayer(c);
 
                 for (int col = 1; col < 3; col++) {
+
+                    if(c == '\0')
+                    {
+                        match = 0;
+                        break;
+                    }
+
                     if (c != TicTacToeGame[row, col])
                     {
                         match = 0;
@@ -108,6 +126,7 @@ namespace Investments.Models
                         return true;
                     }
                 }
+                match = 0;
             }
 
             return false;
@@ -127,6 +146,13 @@ namespace Investments.Models
 
             for (int row = 1; row < 3; row++)
             {
+                col++;
+                if (c == '\0')
+                {
+                    match = 0;
+                    break;
+                }
+
                 if(c != TicTacToeGame[row, col])
                 {
                     match = 0;
@@ -138,9 +164,10 @@ namespace Investments.Models
 
                 if(match == 2)
                 {
+                    player.Wins++;
                     return true;
                 }
-                col++;
+                
             }
 
             col = 0;
@@ -149,10 +176,18 @@ namespace Investments.Models
              *                         ->
              * Check Bottom Right ->
              */
-            c = TicTacToeGame[2, 0];
-            player = CheckPlayer(c);
+            c = TicTacToeGame[2, col];
+            //player = CheckPlayer(c);
+            match = 0;
             for (int row = 1; row >= 0; row--)
             {
+                col++;
+                if (c == '\0')
+                {
+                    match = 0;
+                    break;
+                }
+
                 if(c != TicTacToeGame[row, col])
                 {
                     match = 0;
@@ -161,7 +196,6 @@ namespace Investments.Models
                 {
                     match++;
                 }
-                col++;
 
                 if(match == 2)
                 {
