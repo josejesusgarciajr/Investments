@@ -13,7 +13,9 @@ namespace Investments.Models
         {
             TicTacToeGame = new char[3, 3];
             Player1 = new Player();
+            Player1.BoarderColor = "orange";
             Player2 = new Player();
+            Player2.BoarderColor = "black";
             PlayerTurn = new Player();
         }
 
@@ -21,30 +23,57 @@ namespace Investments.Models
         {
             TicTacToeGame = new char[3, 3];
             Player1 = player1;
+            Player1.BoarderColor = "orange";
             Player2 = player2;
+            Player2.BoarderColor = "black";
+        }
+
+        public bool Tie()
+        {
+            for(int row = 0; row < 3; row++)
+            {
+                for(int col = 0; col < 3; col++)
+                {
+                    if(TicTacToeGame[row, col].Equals('\0'))
+                    {
+                        /*
+                         * Tie
+                         * Generate Random Gif
+                         */
+                        Random r = new Random();
+                        int x = r.Next(1, 4);
+                        PlayerTurn.CelebrationGifPath = "/Images/TicTacToe/Tie" + x + ".gif";
+                        return false;
+                    }
+                }
+            }
+
+            return true;
         }
 
         public bool CheckForVictory()
         {
             if(VerticalWin())
             {
-                Console.WriteLine($"Vertical Win");
                 return true;
             }
 
             if(HorizontalWin())
             {
-                Console.WriteLine($"Horizontal Win");
                 return true;
             }
 
             if(DiagonalWin())
             {
-                Console.WriteLine($"Diagonal Win");
                 return true;
             }
 
             return false;
+        }
+
+        public void ResetGame()
+        {
+            TicTacToeGame = new char[3, 3];
         }
 
         public Player CheckPlayer(char c)

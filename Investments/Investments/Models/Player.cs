@@ -6,6 +6,7 @@ namespace Investments.Models
         public string Name { get; set; }
         public int Wins { get; set; }
         public char C { get; set; }
+        public string BoarderColor { get; set; }
 
         public string CelebrationGifPath { get; set; }
 

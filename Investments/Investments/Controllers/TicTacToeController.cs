@@ -10,6 +10,7 @@ namespace Investments.Controllers
     {
         public static Game game = new Game();
         public static bool s = false;
+
         // GET: /<controller>/
         public IActionResult Index()
         {
@@ -21,6 +22,7 @@ namespace Investments.Controllers
 
         public IActionResult DisplayGame(Game g)
         {
+
            if(s == false)
             {
                 game.Player1 = g.Player1;
@@ -28,6 +30,16 @@ namespace Investments.Controllers
                 game.Player1.C = 'x';
                 game.Player2.C = 'o';
                 game.PlayerTurn = game.Player1;
+                game.PlayerTurn.BoarderColor = game.Player1.BoarderColor;
+            }
+
+            /*
+             * if players name not entered, 
+             * redirect to main menu
+             */
+            if (game.Player1.Name == null || game.Player2.Name == null)
+            {
+                return RedirectToAction("Index");
             }
 
             s = true;
@@ -36,6 +48,15 @@ namespace Investments.Controllers
 
         public IActionResult PlayerMove(int row, int col, char c)
         {
+            /*
+             * if players name not entered, 
+             * redirect to main menu
+             */
+            if (game.Player1.Name == null || game.Player2.Name == null)
+            {
+                return RedirectToAction("Index");
+            }
+
             // mark player turn
             game.TicTacToeGame[row, col] = c;
 
@@ -51,17 +72,47 @@ namespace Investments.Controllers
             if(game.PlayerTurn.C.Equals(game.Player1.C))
             {
                 game.PlayerTurn = game.Player2;
+                game.PlayerTurn.BoarderColor = game.Player2.BoarderColor;
             } else
             {
                 game.PlayerTurn = game.Player1;
+                game.PlayerTurn.BoarderColor = game.Player1.BoarderColor;
+            }
+
+            if(game.Tie())
+            {
+                return RedirectToAction("Tie");
             }
 
             return RedirectToAction("DisplayGame", game);
         }
 
+        public IActionResult Tie()
+        {
+            /*
+             * if players name not entered, 
+             * redirect to main menu
+             */
+            if (game.Player1.Name == null || game.Player2.Name == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            game.ResetGame();
+            return View(game);
+        }
+
         public IActionResult Victory()
         {
-            Console.WriteLine($"PlayerTurn Victory: {game.PlayerTurn.Name}");
+            /*
+             * if players name not entered, 
+             * redirect to main menu
+             */
+            if (game.Player1.Name == null || game.Player2.Name == null)
+            {
+                return RedirectToAction("Index");
+            }
+
             if(game.PlayerTurn.Name == game.Player1.Name)
             {
                 game.PlayerTurn.CelebrationGifPath = "/Images/TicTacToe/Vanessa.gif";
@@ -70,6 +121,7 @@ namespace Investments.Controllers
                 game.PlayerTurn.CelebrationGifPath = "/Images/TicTacToe/Jose.gif";
             }
 
+            game.ResetGame();
             return View(game);
         }
     }

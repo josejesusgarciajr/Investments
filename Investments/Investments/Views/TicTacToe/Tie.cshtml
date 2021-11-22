@@ -1,12 +1,13 @@
 ﻿@model Game;
 @{
-    ViewData["Title"] = Model.PlayerTurn.Name + " WINS!!!";
+    ViewData["Title"] = "DRAW!!!";
 }
 
 <div class="text-center">
-    <h1 class="display-4"><code>@Model.PlayerTurn.Name WINS!!!</code></h1>
 
-    <form asp-controller="TicTacToe" asp-action="DisplayGame" >
+    <h1 class="display-4">DRAW!!!</h1>
+
+    <form asp-controller="TicTacToe" asp-action="DisplayGame">
 
         <input type="hidden"
                asp-for="Player1.Name" value="@Model.Player1.Name" />
@@ -23,8 +24,7 @@
 
         <!-- Submit Button -->
         <br />
-        <input type="submit" value="Restart Game" class="btn btn-success"/>
+        <input type="submit" value="Restart Game" class="btn btn-success" />
 
     </form>
-
 </div>

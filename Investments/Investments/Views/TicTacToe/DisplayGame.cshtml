@@ -21,17 +21,17 @@
 
         @if (Model.TicTacToeGame[0, 0].Equals('x'))
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/x.png" />
         }
         else if (Model.TicTacToeGame[0, 0].Equals('o'))
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/o.png" />
         }
         else
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/white.png" />
         }
 
@@ -40,17 +40,17 @@
        asp-route-row="0" asp-route-col="1" asp-route-c="@Model.PlayerTurn.C">
         @if (Model.TicTacToeGame[0, 1].Equals('x'))
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/x.png" />
         }
         else if (Model.TicTacToeGame[0, 1].Equals('o'))
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/o.png" />
         }
         else
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/white.png" />
         }
     </a>
@@ -58,17 +58,17 @@
        asp-route-row="0" asp-route-col="2" asp-route-c="@Model.PlayerTurn.C">
         @if (Model.TicTacToeGame[0, 2].Equals('x'))
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/x.png" />
         }
         else if (Model.TicTacToeGame[0, 2].Equals('o'))
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/o.png" />
         }
         else
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/white.png" />
         }
     </a>
@@ -79,17 +79,17 @@
        asp-route-row="1" asp-route-col="0" asp-route-c="@Model.PlayerTurn.C">
         @if (Model.TicTacToeGame[1, 0].Equals('x'))
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/x.png" />
         }
         else if (Model.TicTacToeGame[1, 0].Equals('o'))
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/o.png" />
         }
         else
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/white.png" />
         }
     </a>
@@ -97,17 +97,17 @@
        asp-route-row="1" asp-route-col="1" asp-route-c="@Model.PlayerTurn.C">
         @if (Model.TicTacToeGame[1, 1].Equals('x'))
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/x.png" />
         }
         else if (Model.TicTacToeGame[1, 1].Equals('o'))
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/o.png" />
         }
         else
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/white.png" />
         }
     </a>
@@ -115,17 +115,17 @@
        asp-route-row="1" asp-route-col="2" asp-route-c="@Model.PlayerTurn.C">
         @if (Model.TicTacToeGame[1, 2].Equals('x'))
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/x.png" />
         }
         else if (Model.TicTacToeGame[1, 2].Equals('o'))
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/o.png" />
         }
         else
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/white.png" />
         }
     </a>
@@ -136,17 +136,17 @@
        asp-route-row="2" asp-route-col="0" asp-route-c="@Model.PlayerTurn.C">
         @if (Model.TicTacToeGame[2, 0].Equals('x'))
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/x.png" />
         }
         else if (Model.TicTacToeGame[2, 0].Equals('o'))
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/o.png" />
         }
         else
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/white.png" />
         }
     </a>
@@ -154,17 +154,17 @@
        asp-route-row="2" asp-route-col="1" asp-route-c="@Model.PlayerTurn.C">
         @if (Model.TicTacToeGame[2, 1].Equals('x'))
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/x.png" />
         }
         else if (Model.TicTacToeGame[2, 1].Equals('o'))
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/o.png" />
         }
         else
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/white.png" />
         }
     </a>
@@ -172,17 +172,17 @@
        asp-route-row="2" asp-route-col="2" asp-route-c="@Model.PlayerTurn.C">
         @if (Model.TicTacToeGame[2, 2].Equals('x'))
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/x.png" />
         }
         else if (Model.TicTacToeGame[2, 2].Equals('o'))
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/o.png" />
         }
         else
         {
-            <img style="border:2px solid black"
+            <img style="border:2px solid @Model.PlayerTurn.BoarderColor"
                  width="320" height="225" src="/Images/white.png" />
         }
     </a>
