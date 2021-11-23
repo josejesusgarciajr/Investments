@@ -206,7 +206,7 @@ namespace Investments.Models
              * Check Bottom Right ->
              */
             c = TicTacToeGame[2, col];
-            //player = CheckPlayer(c);
+            player = CheckPlayer(c);
             match = 0;
             for (int row = 1; row >= 0; row--)
             {
