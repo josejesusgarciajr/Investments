@@ -68,8 +68,13 @@ namespace Investments.Controllers
                 return RedirectToAction("Victory");
             }
 
+            if (game.Tie())
+            {
+                return RedirectToAction("Tie");
+            }
+
             // next players move
-            if(game.PlayerTurn.C.Equals(game.Player1.C))
+            if (game.PlayerTurn.C.Equals(game.Player1.C))
             {
                 game.PlayerTurn = game.Player2;
                 game.PlayerTurn.BoarderColor = game.Player2.BoarderColor;
@@ -77,11 +82,6 @@ namespace Investments.Controllers
             {
                 game.PlayerTurn = game.Player1;
                 game.PlayerTurn.BoarderColor = game.Player1.BoarderColor;
-            }
-
-            if(game.Tie())
-            {
-                return RedirectToAction("Tie");
             }
 
             return RedirectToAction("DisplayGame", game);
