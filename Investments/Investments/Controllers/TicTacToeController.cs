@@ -48,6 +48,7 @@ namespace Investments.Controllers
 
         public IActionResult PlayerMove(int row, int col, char c)
         {
+            
             /*
              * if players name not entered, 
              * redirect to main menu
@@ -56,18 +57,17 @@ namespace Investments.Controllers
             {
                 return RedirectToAction("Index");
             }
-
+            Console.WriteLine($"{game.CheckPlayer(c).Name} Made a Move");
             // mark player turn
             game.TicTacToeGame[row, col] = c;
 
             // check to see if player won
-            bool victory = game.CheckForVictory();
-
-            if(victory)
+            if(game.CheckForVictory())
             {
                 return RedirectToAction("Victory");
             }
 
+            // check for a tie/draw
             if (game.Tie())
             {
                 return RedirectToAction("Tie");

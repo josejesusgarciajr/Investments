@@ -32,6 +32,14 @@ namespace Investments.Controllers
             return View(DateIdeas);
         }
 
+        public IActionResult Roulette()
+        {
+            Random rand = new Random();
+            int randomNumber = rand.Next(0, DateIdeas.Count);
+            int c = DateIdeas[randomNumber].ID;
+            return RedirectToAction("DisplayDateIdeaView", new { id = c});
+        }
+
         public IActionResult AddDateView()
         {
             return View();
