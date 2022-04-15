@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'Tik'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5696BC141C984052A737A75C35199674 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FEAF941430644A32BACEC3087843B337 }}
           package: .
