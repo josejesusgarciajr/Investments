@@ -1,12 +1,15 @@
 ﻿<Properties StartupConfiguration="{DEDCFD71-F776-492B-8CE5-0CAB351C550E}|Default">
   <MonoDevelop.Ide.ItemProperties.Investments PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Startup.cs">
+    <Files>
+      <File FileName="Startup.cs" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Investments" expanded="True">
             <Node name="Investments" expanded="True">
-              <Node name="Models" selected="True" />
+              <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
         </State>
