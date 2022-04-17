@@ -467,7 +467,7 @@
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/jginvincible/.nuget/NuGet/NuGet.Config"
+        "/Users/jginvincible/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
